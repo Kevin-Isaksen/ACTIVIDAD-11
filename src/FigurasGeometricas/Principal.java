@@ -12,7 +12,7 @@ public class Principal {
     public static void menu () throws Exception {
         Scanner entrada = new Scanner(System.in);
         int figura, propiedad;
-        double lado, altura;
+        double lado;
         boolean salir = false;
         while (!salir) {
             System.out.println("¡Calcula tu figura geometrica!");
@@ -54,17 +54,12 @@ public class Principal {
                             }
                             break;
                         case 3:
+                            System.out.print("Ingresa la dimensión de la base en cm: ");
+                            lado = entrada.nextDouble();
+                            Triangle triangle = new Triangle(lado);
                             if (propiedad == 1) {
-                                System.out.print("Ingresa la dimensión de la base en cm: ");
-                                lado = entrada.nextDouble();
-                                System.out.print("Ingresa la dimensión de la altura en cm: ");
-                                altura = entrada.nextDouble();
-                                Triangle triangle = new Triangle(lado, altura);
                                 System.out.println("El área del triangulo es: " + triangle.getArea() + " cm");
                             } else if (propiedad == 2) {
-                                System.out.print("Ingresa la dimensión del lado en cm: ");
-                                lado = entrada.nextDouble();
-                                Triangle triangle = new Triangle(lado);
                                 System.out.println("El perimetro del triangulo es: " + triangle.getPerimeter() + " cm");
                             }
                             break;
